@@ -1,0 +1,18 @@
+<div class="customer-card">
+  <% if customer.image.attached? %>
+    <%= image_tag url_for(customer.image), class: "customer-image", size: "150x150" %>
+  <% else %>
+    <%= image_tag 'default_image.jpg', class: "customer-image", size: "150x150" %> <!-- Placeholder if no image -->
+  <% end %>
+
+  <h2><%= customer.full_name %></h2>
+  <p><strong>Phone:</strong> <%= customer.phone_number %></p>
+
+  <% if customer.email.present? %>
+    <p><strong>Email:</strong> <%= customer.email %></p>
+  <% else %>
+    <p><strong>Email:</strong> Not provided</p>
+  <% end %>
+
+  <p><strong>Notes:</strong> <%= customer.notes %></p>
+</div>
